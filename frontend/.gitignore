@@ -1,0 +1,43 @@
+# Node modules directory
+node_modules/
+
+# Build output
+/build
+/dist
+
+# React-specific
+/.cache
+/.next
+/public/static
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE or editor specific files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Package-lock files (optional, if you use Yarn, you can skip this)
+package-lock.json
+
+# Optional folder for store created by redux (if using)
+redux/
+
+# Storybook build output
+storybook-static/
+
+# Test files
+/coverage
