@@ -1,21 +1,22 @@
 import React from "react";
+import {Button, List,ListItem,ListItemText,Typography} from '@mui/material';
+import BookItem from "./BookItem";
 const BookList =({books,onDelete}) => {
-    if (!Array.isArray(books)) {
-        console.error("Expected books to be an array, but got:", books);
-        return <p>No books available</p>;
+    if (!Array.isArray(books) || books.length === 0) {
+        return <Typography>No Books Available</Typography>;
     }
     return (
 
-        <div>
-            <h2>Books List</h2>
-            <ul>
+        <div style={{maxWidth: 600, margin: '20px auto' }}>
+            <Typography variant="h5" gutterBottom>
+                Books List
+            </Typography>
+            
+            <List>
                 {books.map((book,index) =>(
-                    <li key={index}>
-                     <strong>{book.title}</strong> by {book.author} ({book.publishedYear}) - {book.genre}
-                        <button onClick={() =>onDelete(book._id)}>Delete</button>
-                    </li>
+                    <BookItem key={index} book={book} onDelete={onDelete}/>
             ))}
-            </ul>
+            </List>
            
 
         </div>
